@@ -1,0 +1,14 @@
+# Target labels
+ sdl2-populate
+# Source files and their labels
+C:/Users/barte/tp_projekt_4/build/SDL2_gfx/sdl2-subbuild/CMakeFiles/sdl2-populate
+C:/Users/barte/tp_projekt_4/build/SDL2_gfx/sdl2-subbuild/CMakeFiles/b09233149be3d670c088d2c5d0b7cdc1/sdl2-populate.rule
+C:/Users/barte/tp_projekt_4/build/SDL2_gfx/sdl2-subbuild/CMakeFiles/547b6dde0591fc8e7059037bc91b463c/sdl2-populate-complete.rule
+C:/Users/barte/tp_projekt_4/build/SDL2_gfx/sdl2-subbuild/CMakeFiles/a57c7e5334c94d23abd5c5201e4cad38/sdl2-populate-build.rule
+C:/Users/barte/tp_projekt_4/build/SDL2_gfx/sdl2-subbuild/CMakeFiles/a57c7e5334c94d23abd5c5201e4cad38/sdl2-populate-configure.rule
+C:/Users/barte/tp_projekt_4/build/SDL2_gfx/sdl2-subbuild/CMakeFiles/a57c7e5334c94d23abd5c5201e4cad38/sdl2-populate-download.rule
+C:/Users/barte/tp_projekt_4/build/SDL2_gfx/sdl2-subbuild/CMakeFiles/a57c7e5334c94d23abd5c5201e4cad38/sdl2-populate-install.rule
+C:/Users/barte/tp_projekt_4/build/SDL2_gfx/sdl2-subbuild/CMakeFiles/a57c7e5334c94d23abd5c5201e4cad38/sdl2-populate-mkdir.rule
+C:/Users/barte/tp_projekt_4/build/SDL2_gfx/sdl2-subbuild/CMakeFiles/a57c7e5334c94d23abd5c5201e4cad38/sdl2-populate-patch.rule
+C:/Users/barte/tp_projekt_4/build/SDL2_gfx/sdl2-subbuild/CMakeFiles/a57c7e5334c94d23abd5c5201e4cad38/sdl2-populate-test.rule
+C:/Users/barte/tp_projekt_4/build/SDL2_gfx/sdl2-subbuild/CMakeFiles/a57c7e5334c94d23abd5c5201e4cad38/sdl2-populate-update.rule
