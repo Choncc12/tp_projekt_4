@@ -4,7 +4,7 @@ PlanarQuadrotorVisualizer::PlanarQuadrotorVisualizer(PlanarQuadrotor *quadrotor_
 
 /**
  * TODO: Improve visualizetion
- * 1. Transform coordinates from quadrotor frame to image frame so the circle is in the middle of the screen
+ * DONE 1. Transform coordinates from quadrotor frame to image frame so the circle is in the middle of the screen
  * 2. Use more shapes to represent quadrotor (e.x. try replicate http://underactuated.mit.edu/acrobot.html#section3 or do something prettier)
  * 3. Animate proppelers (extra points)
  */

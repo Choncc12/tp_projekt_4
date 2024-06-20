@@ -2,6 +2,7 @@
  * SDL window creation adapted from https://github.com/isJuhn/DoublePendulum
 */
 #include "simulate.h"
+#include <matplot/matplot.h>
 
 Eigen::MatrixXf LQR(PlanarQuadrotor &quadrotor, float dt) {
     /* Calculate LQR gain matrix */
@@ -40,9 +41,9 @@ int main(int argc, char* args[])
 
     /**
      * TODO: Extend simulation
-     * 1. Set goal state of the mouse when clicking left mouse button (transform the coordinates to the quadrotor world! see visualizer TODO list)
+     * DONE 1. Set goal state of the mouse when clicking left mouse button (transform the coordinates to the quadrotor world! see visualizer TODO list)
      *    [x, y, 0, 0, 0, 0]
-     * 2. Update PlanarQuadrotor from simulation when goal is changed
+     * CHYBA DONE 2. Update PlanarQuadrotor from simulation when goal is changed
     */
     
     Eigen::VectorXf initial_state = Eigen::VectorXf::Zero(6);
@@ -69,6 +70,7 @@ int main(int argc, char* args[])
     std::vector<float> x_history;
     std::vector<float> y_history;
     std::vector<float> theta_history;
+    
 
     if (init(gWindow, gRenderer, SCREEN_WIDTH, SCREEN_HEIGHT) >= 0)
     {
@@ -93,14 +95,18 @@ int main(int argc, char* args[])
                     std::cout << "Mouse position: (" << x << ", " << y << ")" << std::endl;
         
                 }else if (e.type == SDL_MOUSEBUTTONDOWN && e.button.button==SDL_BUTTON_LEFT){
-                   
                     SDL_GetMouseState(&x, &y);
                     std::cout << "new goal: (" << x << ", " << y << ")" << std::endl;
                     x=x-SCREEN_WIDTH/2;
                     y=y-SCREEN_HEIGHT/2;
                     goal_state << x,y,0,0,0,0;
                     quadrotor.SetGoal(goal_state);
+                }else if (SDLK_p == e.key.keysym.sym && SDL_KEYDOWN==e.type){
+                    std::cout << "print wykres" << std::endl;
+                    using namespace matplot;
+                    auto p = plot(x_history, y_history);
                     
+                    show();
                 }
                 
             }
@@ -112,7 +118,13 @@ int main(int argc, char* args[])
 
             /* Quadrotor rendering step */
             quadrotor_visualizer.render(gRenderer);
-
+            
+            /*x,y,theta_history dokończyć*/
+            state=quadrotor.GetState();
+            x_history.push_back(1*(state[0]+(0.5*SCREEN_WIDTH)));
+            y_history.push_back(-1*(state[1]+(0.5*SCREEN_HEIGHT)));
+            theta_history.push_back(state[2]);
+            //end
             SDL_RenderPresent(gRenderer.get());
 
             /* Simulate quadrotor forward in time */
